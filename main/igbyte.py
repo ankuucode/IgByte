@@ -65,6 +65,7 @@ def igresetv2(user:str):
     res= requests.post('https://i.instagram.com/api/v1/accounts/send_recovery_flow_email/', headers=headers, data=data)
     if res.status_code==200:
         res_code=res.text
+        return res_code
     else:
         return f"Error: status code={res.status_code}"
 
@@ -118,7 +119,7 @@ def iguid_info(uid):
         print("Error:", e)
         return None
 #======================================================================================
-
+#By Ankucode
 def download_reel(insta_url:str):
     url = f'https://saverify.com/api.php?source=instagram&url={insta_url}'
 
